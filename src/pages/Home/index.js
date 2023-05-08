@@ -22,7 +22,7 @@ function Home(){
       })
 
       //console.log(response.data.results.slice(0, 10));
-      setFilmes(response.data.results.slice(0, 10))
+      setFilmes(response.data.results.slice(0, 50))
       setLoading(false);
 
     }
@@ -47,7 +47,9 @@ function Home(){
         {filmes.map((filme) => {
           return(
             <article key={filme.id}>
+              <div className='title'>
               <strong>{filme.title}</strong>
+                </div>
               <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} alt={filme.title} />
               <Link to={`/filme/${filme.id}`}>Acessar</Link>
             </article>
